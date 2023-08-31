@@ -1,6 +1,6 @@
 import burgerImage from "../../../assets/Group-2/Image/BurgerImage.png";
 import burgerImage1 from "../../../assets/Group-2/Image/Image.png";
-import burgerImage2 from "../../../assets/Group-2/Image/-2.png";
+import burgerImage2 from "../../../assets/Group-2/Image/mostPopularBG.jpg";
 
 import "./MostPopular.css";
 
@@ -70,7 +70,7 @@ const MostPopular = () => {
           </div>
         </div>
        <div
-          className="bg-cover w-full h-full bg-no-repeat rounded-xl"
+          className="bg-cover bg-fixed w-full h-full bg-no-repeat rounded-xl bg-left"
           style={{ backgroundImage: `url('${burgerImage2}')` }}
         >
           <div className="p-4 md:p-8">

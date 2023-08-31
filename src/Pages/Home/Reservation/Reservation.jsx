@@ -43,7 +43,7 @@ const Reservation = () => {
             className="input input-bordered w-full md:max-w-xs text-white"
           />
         </div>
-        <input type="submit" className="mb-10 md:mb-56 btn max-w-xs mx-auto w-full bg-red-500 text-black hover:text-white" value="FIND A TABLE" />
+        <input type="submit" className="mb-10 md:mb-56 btn max-w-xs mx-auto w-full bg-orange-500 text-black hover:text-white" value="FIND A TABLE" />
        </div>
       </form>
     </div>

@@ -5,9 +5,9 @@ const Item = ({name, details, price, image}) => {
     <div className='text-center p-4'>
       <img className='h-56 mx-auto ' src={image} alt="Burger Image" />
       <img className="border-black mx-auto -mt-10" src={shadow} alt="" />
-      <h3>{name}</h3>
+      <h3 className="font-semibold text-xl">{name}</h3>
       <p>{details}</p>
-      <p>{price}</p>
+      <p className="text-3xl mb-2 text-orange-600">${price}</p>
 
       <button className="btn ">ORDER NOW</button>
       <div className="divider w-10/12 mx-auto"></div>
