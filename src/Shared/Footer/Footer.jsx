@@ -27,8 +27,8 @@ const Footer = () => {
       </div> */}
       <footer className="footer p-10  text-neutral-content container mx-auto">
   <div>
-  <img className="my-6" src={footerLogo} alt="" />
-  <p className="w-6/12">
+  <img src={footerLogo} alt="" />
+  <p className="md:w-6/12">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
           aperiam cupiditate doloribus ratione error expedita totam ipsam
           quidem quis iure. cupiditate doloribus ratione error expedita totam

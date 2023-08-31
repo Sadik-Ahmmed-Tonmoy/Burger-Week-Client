@@ -4,6 +4,9 @@ import MostPopular from "../MostPopular/MostPopular";
 import Reservation from "../Reservation/Reservation";
 import UpcomingEvents from "../UpcomingEvents/UpcomingEvents";
 
+import bgReservation from "../../../assets/Group-5/Image/Group5.png";
+import { ScrollRestoration } from "react-router-dom";
+
 const Home = () => {
   return (
     <div>
@@ -11,9 +14,13 @@ const Home = () => {
         <div className="container mx-auto">
         <MostPopular />
         <Menu/>
-        <UpcomingEvents/>
+      
         </div>
+        <div className="text-center bg-no-repeat w-full h-full bg-cover bg-fixed" style={{backgroundImage: `url('${bgReservation}')`}}>
+        <UpcomingEvents/>
         <Reservation/>
+        </div>
+      <ScrollRestoration/>
     </div>
   );
 };

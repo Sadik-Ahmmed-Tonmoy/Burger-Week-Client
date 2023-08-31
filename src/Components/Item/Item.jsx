@@ -1,12 +1,16 @@
-import burger1 from '../../assets/Group-3/Image/Image.png'
+import shadow from "../../assets/Group-1/Image/Shadow.png"
 
-const Item = () => {
+const Item = ({name, details, price, image}) => {
   return (
-    <div className='text-center'>
-      <img src={burger1} alt="Burger Image" />
-      <h3>BEEF BURGER</h3>
-      <p>Lorem ipsum dolor sit amet.</p>
+    <div className='text-center p-4'>
+      <img className='h-56 mx-auto ' src={image} alt="Burger Image" />
+      <img className="border-black mx-auto -mt-10" src={shadow} alt="" />
+      <h3>{name}</h3>
+      <p>{details}</p>
+      <p>{price}</p>
+
       <button className="btn ">ORDER NOW</button>
+      <div className="divider w-10/12 mx-auto"></div>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import eventImage from "../../../assets/Group-4/Image/Group 4.png";
 
 const UpcomingEvents = () => {
   return (
-    <div className="md:flex border rounded-md shadow-2xl ">
+    <div className="md:flex shadow-2xl rounded-b-2xl container mx-auto bg-white ">
       <section className="p-4 md:p-16">
         <h5 className="text-xl md:text-3xl">DISCOVER</h5>
         <h3 className="text-3xl md:text-6xl font-extrabold my-5">UPCOMING EVENTS</h3>

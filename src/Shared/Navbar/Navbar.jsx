@@ -1,7 +1,14 @@
-
 import Logo from "../../assets/Group-1/Logo/Place Your Logo Here (Double Click to Edit).png";
 import bikeLogo from "../../assets/Group-1/Design/Vector Smart Object.png";
-import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import {
+  Link,
+  Button,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
 const Navbar = () => {
   return (
@@ -34,85 +41,81 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-52"
             >
               <li>
-                  <Link
-                    activeClass="active"
-                    to="home"
-                    spy={true}
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                  >
-                    Home
-                  </Link>
-                </li>
-          <li>
-                  <Link
-                    activeClass="active"
-                    to="menu"
-                    spy={true}
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                  >
-                    Menu
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="contactUs"
-                    spy={true}
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                  >
-                    Contact Us
-                  </Link>
-                </li>
-          
+                <Link
+                  activeClass="active"
+                  to="home"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  activeClass="active"
+                  to="menu"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                >
+                  Menu
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="contactUs"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                >
+                  Contact Us
+                </Link>
+              </li>
             </ul>
           </div>
-            <img className="ms-3 md:h-12 h-5" src={Logo} alt="" />
+          <img className="ms-3 md:h-12 h-6" src={Logo} alt="" />
         </div>
         {/* pc */}
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-          
-          <li>
-                  <Link
-                    activeClass="active"
-                    to="home"
-                    spy={true}
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                  >
-                    Home
-                  </Link>
-                </li>
-          <li>
-                  <Link
-                    to="menu"
-                    spy={true}
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                  >
-                    Menu
-                  </Link>
-                </li>
-          <li>
-                  <Link
-                    to="contactUs"
-                    spy={true}
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                  >
-                    Contact Us
-                  </Link>
-                </li>
-          
-         
+            <li>
+              <Link
+                activeClass="active"
+                to="home"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="menu"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+              >
+                Menu
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="contactUs"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+              >
+                Contact Us
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="navbar-end">
