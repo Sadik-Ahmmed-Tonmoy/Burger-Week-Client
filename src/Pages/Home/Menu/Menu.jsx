@@ -3,8 +3,9 @@ import Item from "../../../Components/Item/Item";
 
 const Menu = () => {
   return (
-    <div className="text-center">
+    <div id="menu" className="text-center">
      <section>
+     <div className="p-5 md:p-14"></div>
      <h5 className="bg-orange-500 p-4 m-6 w-fit mx-auto rounded-md">ALWAYS TASTE BURGER</h5>
       <h2 className="text-6xl font-bold my-2">CHOOSE & ENJOY</h2>
       <p>

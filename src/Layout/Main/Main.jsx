@@ -7,32 +7,46 @@ import UpcomingEvents from "../../Pages/Home/UpcomingEvents/UpcomingEvents";
 import Menu from "../../Pages/Home/Menu/Menu";
 import Reservation from "../../Pages/Home/Reservation/Reservation";
 
-import './Main.css'
+import "./Main.css";
+import Footer from "../../Shared/Footer/Footer";
+import { Outlet } from "react-router-dom";
 
 const Main = () => {
   return (
     <div className="bg-white text-amber-950 font-serif">
-      <div
-        className="bg-cover h-96 md:h-screen"
-        style={{ backgroundImage: `url('${bgImg}')` }}
-      >
-        <div className="container mx-auto">
-          <Navbar />
-          <Banner />
-        </div>
-      </div>
-      <div className="container mx-auto">
-        <MostPopular />
-        <Menu />
-        <UpcomingEvents />
-      </div>
-
-        <div className="bg" style={{backgroundImage: `url('${bgReservation}')`}}>
-        <div className="container mx-auto "> 
-          <Reservation />
-        </div>
-        </div>
+     
+        <Navbar />
+        <Outlet />
+        <Footer/>
     </div>
+    // <div className="bg-white text-amber-950 font-serif">
+    //   <div
+    //     className="bg-cover h-96 md:h-screen"
+    //     style={{ backgroundImage: `url('${bgImg}')` }}
+    //   >
+    //     <div className="container mx-auto">
+    //       <Navbar />
+    //       <Banner />
+    //     </div>
+    //   </div>
+    //   <div className="container mx-auto">
+    //     <MostPopular />
+    //     <Menu />
+    //     <UpcomingEvents />
+    //   </div>
+
+    //   <div
+    //     className="bg"
+    //     style={{ backgroundImage: `url('${bgReservation}')` }}
+    //   >
+    //     <div className="container mx-auto ">
+    //       <Reservation />
+    //     </div>
+    //   </div>
+    //   <div className="container mx-auto">
+    //   <Footer/>
+    //   </div>
+    // </div>
   );
 };
 
