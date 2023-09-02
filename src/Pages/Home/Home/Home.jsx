@@ -11,16 +11,18 @@ const Home = () => {
   return (
     <div>
       <Banner />
-        <div className="container mx-auto">
+      <div className="container mx-auto">
         <MostPopular />
-        <Menu/>
-      
-        </div>
-        <div className="text-center bg-no-repeat w-full h-full bg-cover bg-fixed" style={{backgroundImage: `url('${bgReservation}')`}}>
-        <UpcomingEvents/>
-        <Reservation/>
-        </div>
-      <ScrollRestoration/>
+        <Menu />
+      </div>
+      <div
+        className="text-center bg-no-repeat w-full h-full bg-cover bg-fixed md:bg-center bg-right"
+        style={{ backgroundImage: `url('${bgReservation}')` }}
+      >
+        <UpcomingEvents />
+        <Reservation />
+      </div>
+      <ScrollRestoration />
     </div>
   );
 };

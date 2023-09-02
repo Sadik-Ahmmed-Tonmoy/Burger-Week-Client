@@ -1,14 +1,16 @@
 import axios from "axios";
 import Item from "../../../Components/Item/Item";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Menu = () => {
   const [menu, setMenu] = useState([]);
-  axios
+  useEffect(() => {
+    axios
     .get("https://burger-week-server.vercel.app/burgers")
     .then((response) => {
       setMenu(response.data);
     });
+  },[])
   return (
     <div id="menu" className="text-center">
       <section>
@@ -31,11 +33,8 @@ const Menu = () => {
         <div className="grid md:grid-cols-3 gap-14">
           {menu.map((item) => (
             <Item
-              key={item._id}
-              name={item.name}
-              details={item.description}
-              price={item.price}
-              image={item.image}
+              key={item._id} 
+              item={item}
             />
           ))}
         </div>

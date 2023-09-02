@@ -70,7 +70,7 @@ const MostPopular = () => {
           </div>
         </div>
        <div
-          className="bg-cover bg-fixed w-full h-full bg-no-repeat rounded-xl bg-left"
+          className="bg-cover bg-fixed w-full h-full bg-no-repeat rounded-xl bg-center md:bg-left"
           style={{ backgroundImage: `url('${burgerImage2}')` }}
         >
           <div className="p-4 md:p-8">
