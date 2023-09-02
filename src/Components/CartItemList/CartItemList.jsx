@@ -61,48 +61,6 @@ const CartItemList = ({ item }) => {
           </div>
         </div>
       </div>
-      {/* <div>
-        <div>
-          <div className="border rounded-md flex p-2 w-full">
-            <div className="avatar border rounded-md ">
-              <div className="w-24 h-24 rounded">
-                <img src={image} />
-              </div>
-            </div>
-            <div className="flex items-center justify-between">
-              <div className="ms-2">
-                <p>Name: {name}</p>
-                <p className="me-10">Description: {description}</p>
-                <p className="mt-4">
-                  Price: <span className="text-orange-500">${price}</span>
-                </p>
-                
-              </div>
-              <div>
-                <button
-                  onClick={() => handleDelete()}
-                  className="btn btn-square btn-outline"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 };

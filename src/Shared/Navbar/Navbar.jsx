@@ -9,7 +9,8 @@ import useCart from "../../hooks/useCart/useCart";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [cart] = useCart();
-  console.log(cart);
+const total = cart.reduce((sum, item) => item.price + sum, 0)
+  
   return (
     <div className="">
       <div
@@ -99,9 +100,9 @@ const Navbar = () => {
               >
                 <div className="card-body">
                   <span className="font-bold text-lg">Quantity: {cart?.length}</span>
-                  <span className="text-info">Subtotal: $999</span>
+                  <span className="text-info">Subtotal: ${total}</span>
                   <div className="card-actions">
-                <Link to="/dashboard">    <button className="btn btn-primary btn-block">
+                <Link to="/dashboard/myCart">    <button className="btn btn-primary btn-block">
                       View cart
                     </button></Link>
                   </div>
