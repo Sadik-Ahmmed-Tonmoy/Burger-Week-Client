@@ -43,7 +43,7 @@ const SignUp = () => {
             updateUserProfile(name, img_url)
               .then(() => {
                 const saveUser = { name: data.name, email: data.email, password: data.password, role: "customer"}
-                fetch("http://localhost:5000/users", {
+                fetch("https://burger-week-server.vercel.app/users", {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json",

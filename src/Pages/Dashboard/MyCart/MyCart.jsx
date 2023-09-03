@@ -10,7 +10,7 @@ const MyCart = () => {
   const total = cart.reduce((sum, item) => sum + item.price, 0);
   const paymentDetails = { total, name:user.displayName, email: user.email }
   const handlePayment = () => {
-    axios.post("http://localhost:5000/order", paymentDetails).then((result) => {
+    axios.post("https://burger-week-server.vercel.app/order", paymentDetails).then((result) => {
       console.log(result.data);
       window.location.replace(result.data.url)
     });

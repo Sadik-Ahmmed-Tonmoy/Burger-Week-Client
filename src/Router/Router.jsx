@@ -5,7 +5,8 @@ import SignUp from "../Pages/SignUp/SignUp";
 import Login from './../Pages/Login/Login';
 import Dashboard from "../Layout/Dashboard/Dashboard";
 import MyCart from './../Pages/Dashboard/MyCart/MyCart';
-import PaymentSuccess from './../Pages/PaymentSuccess/PaymentSuccess';
+import PaymentSuccess from '../Pages/Dashboard/PaymentSuccess/PaymentSuccess';
+import PaymentFailed from "../Pages/Dashboard/PaymentFailed/PaymentFailed";
 
 export const router = createBrowserRouter([
     {
@@ -25,6 +26,14 @@ export const router = createBrowserRouter([
             path: "/login",
             element: <Login/>,
           },
+          {
+            path: "/payment/success/:id",
+            element: <PaymentSuccess/>,
+          },
+          {
+            path: "/payment/fail/:id",
+            element: <PaymentFailed/>,
+          },
         
         ],
       },
@@ -38,10 +47,8 @@ export const router = createBrowserRouter([
             element: <MyCart/>,
           },
       
-          {
-            path: "/dashboard/payment/success/:id",
-            element: <PaymentSuccess/>,
-          },
+        
+       
         ],
       },
   ]);

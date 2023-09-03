@@ -3,14 +3,17 @@ import bikeLogo from "../../assets/Group-1/Design/Vector Smart Object.png";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
 import ScrollButton from "../../Components/ScrollButton/ScrollButton";
-import { Link, NavLink } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import useCart from "../../hooks/useCart/useCart";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [cart] = useCart();
-const total = cart.reduce((sum, item) => item.price + sum, 0)
-  
+  const total = cart.reduce((sum, item) => item.price + sum, 0);
+
+  const location = useLocation();
+  const isPayment = location.pathname.includes("payment");
+
   return (
     <>
       <div
@@ -40,15 +43,23 @@ const total = cart.reduce((sum, item) => item.price + sum, 0)
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-52"
             >
-              <li>
-                <ScrollButton name={"Home"} to={"home"} />
-              </li>
-              <li>
-                <ScrollButton name={"Menu"} to={"menu"} />
-              </li>
-              <li>
-                <ScrollButton name={" Contact Us"} to={"contactUs"} />
-              </li>
+              {isPayment ? (
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+              ) : (
+                <>
+                  <li>
+                    <ScrollButton name={"Home"} to={"home"} />
+                  </li>
+                  <li>
+                    <ScrollButton name={"Menu"} to={"menu"} />
+                  </li>
+                  <li>
+                    <ScrollButton name={" Contact Us"} to={"contactUs"} />
+                  </li>
+                </>
+              )}
             </ul>
           </div>
           <img className="ms-3 md:h-12 h-6" src={Logo} alt="" />
@@ -56,15 +67,23 @@ const total = cart.reduce((sum, item) => item.price + sum, 0)
         {/* pc */}
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li>
-          <NavLink to="/"> <ScrollButton name={"Home"} to={"home"} /></NavLink>
-            </li>
-            <li>
-              <ScrollButton name={"Menu"} to={"menu"} />
-            </li>
-            <li>
-              <ScrollButton name={" Contact Us"} to={"contactUs"} />
-            </li>
+            {isPayment ? (
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+            ) : (
+              <>
+                <li>
+                  <ScrollButton name={"Home"} to={"home"} />
+                </li>
+                <li>
+                  <ScrollButton name={"Menu"} to={"menu"} />
+                </li>
+                <li>
+                  <ScrollButton name={" Contact Us"} to={"contactUs"} />
+                </li>
+              </>
+            )}
           </ul>
         </div>
         <div className="navbar-end">
@@ -91,7 +110,9 @@ const total = cart.reduce((sum, item) => item.price + sum, 0)
                       d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                     />
                   </svg>
-                  <span className="badge badge-sm indicator-item">{cart?.length}</span>
+                  <span className="badge badge-sm indicator-item">
+                    {cart?.length}
+                  </span>
                 </div>
               </label>
               <div
@@ -99,12 +120,17 @@ const total = cart.reduce((sum, item) => item.price + sum, 0)
                 className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-white md:bg-transparent shadow-2xl"
               >
                 <div className="card-body">
-                  <span className="font-bold text-lg">Quantity: {cart?.length}</span>
+                  <span className="font-bold text-lg">
+                    Quantity: {cart?.length}
+                  </span>
                   <span className="text-info">Subtotal: ${total}</span>
                   <div className="card-actions">
-                <Link to="/dashboard/myCart">    <button className="btn btn-primary btn-block">
-                      View cart
-                    </button></Link>
+                    <Link to="/dashboard/myCart">
+                      {" "}
+                      <button className="btn btn-primary btn-block">
+                        View cart
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>

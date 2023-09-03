@@ -7,7 +7,7 @@ const CartItemList = ({ item }) => {
   const [, refetch] = useCart();
 
   const handleDelete = () => {
-    axios.delete(`http://localhost:5000/cart/delete/${_id}`).then((res) => {
+    axios.delete(`https://burger-week-server.vercel.app/cart/delete/${_id}`).then((res) => {
       if (res.data.deletedCount > 0) {
         Swal.fire({
           position: "top-end",

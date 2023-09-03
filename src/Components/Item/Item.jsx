@@ -21,7 +21,7 @@ if(user){
   const orderItem = {
     name, description, price, image, itemId: _id, email: user?.email
   }
-axios.post('http://localhost:5000/carts', orderItem).then((response) => {
+axios.post('https://burger-week-server.vercel.app/carts', orderItem).then((response) => {
   if(response.data.insertedId){
     refetch()
     Swal.fire({
