@@ -5,6 +5,9 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import useCart from "../../hooks/useCart/useCart";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const Item = ({item}) => {
   const {name, description, price, image, _id} = item;
@@ -51,7 +54,7 @@ else{
 }
   }
   return (
-    <div className='text-center p-4'>
+    <div data-aos="zoom-in" className='text-center px-4'>
       <img className='h-56 mx-auto ' src={image} alt="Burger Image" />
       <img className="border-black mx-auto -mt-10" src={shadow} alt="" />
       <h3 className="font-semibold text-xl">{name}</h3>
