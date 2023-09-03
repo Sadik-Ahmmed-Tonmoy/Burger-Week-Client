@@ -3,7 +3,7 @@ import bikeLogo from "../../assets/Group-1/Design/Vector Smart Object.png";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
 import ScrollButton from "../../Components/ScrollButton/ScrollButton";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import useCart from "../../hooks/useCart/useCart";
 
 const Navbar = () => {
@@ -12,7 +12,7 @@ const Navbar = () => {
 const total = cart.reduce((sum, item) => item.price + sum, 0)
   
   return (
-    <div className="">
+    <>
       <div
         className="w-full md:fixed md:h-20 "
         style={{ backgroundColor: "rgba(0, 0, 0, 0.1)" }}
@@ -57,7 +57,7 @@ const total = cart.reduce((sum, item) => item.price + sum, 0)
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-          <Link to="/"> <ScrollButton name={"Home"} to={"home"} /></Link>
+          <NavLink to="/"> <ScrollButton name={"Home"} to={"home"} /></NavLink>
             </li>
             <li>
               <ScrollButton name={"Menu"} to={"menu"} />
@@ -143,7 +143,7 @@ const total = cart.reduce((sum, item) => item.price + sum, 0)
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

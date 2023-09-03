@@ -5,6 +5,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import Login from './../Pages/Login/Login';
 import Dashboard from "../Layout/Dashboard/Dashboard";
 import MyCart from './../Pages/Dashboard/MyCart/MyCart';
+import PaymentSuccess from './../Pages/PaymentSuccess/PaymentSuccess';
 
 export const router = createBrowserRouter([
     {
@@ -24,10 +25,11 @@ export const router = createBrowserRouter([
             path: "/login",
             element: <Login/>,
           },
+        
         ],
       },
     {
-        path: "/dashboard/myCart",
+        path: "/dashboard",
         element: <Dashboard/>,
         // errorElement: <ErrorPage />,
         children: [
@@ -35,7 +37,11 @@ export const router = createBrowserRouter([
             path: "/dashboard/myCart",
             element: <MyCart/>,
           },
-       
+      
+          {
+            path: "/dashboard/payment/success/:id",
+            element: <PaymentSuccess/>,
+          },
         ],
       },
   ]);
