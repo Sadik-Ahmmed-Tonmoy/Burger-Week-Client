@@ -8,7 +8,7 @@ const MyCart = () => {
   const [cart] = useCart();
   const { user } = useContext(AuthContext)
   const total = cart.reduce((sum, item) => sum + item.price, 0);
-  const paymentDetails = { total, name:user.displayName, email: user.email }
+  const paymentDetails = { total, name:user?.displayName, email: user?.email }
   const handlePayment = () => {
     axios.post("https://burger-week-server.vercel.app/order", paymentDetails).then((result) => {
       console.log(result.data);
@@ -20,7 +20,7 @@ const MyCart = () => {
     <>
       <div className="flex justify-around w-full">
         {" "}
-        <h3 className="text-3xl">Total Items: {cart.length}</h3>
+        <h3 className="text-3xl">Total Items: {cart?.length}</h3>
         <h3 className="text-3xl">
           Total Price: <span className="text-orange-500"> ${total}</span>
         </h3>

@@ -1,15 +1,14 @@
-import { Slide } from "react-awesome-reveal";
+import { Fade, Slide } from "react-awesome-reveal";
 
 const Reservation = () => {
   return (
     <div id="contactUs" className="text-center">
-      <h5 data-aos="zoom-in" data-aos-duration="2000" className="pt-36 text-3xl">RESERVATION</h5>
-      <p data-aos="zoom-in" data-aos-duration="2000">+880123-456789</p>
-      <h2 data-aos="fade-up"
-     data-aos-duration="2000" className="text-5xl font-extrabold mt-10 mb-20">BOOK YOUR TABLE</h2>
-      <form action="" className=" md:w-6/12 px-2 mx-auto my-5">
+      <h5 className="pt-36 text-3xl">RESERVATION</h5>
+      <p>+880123-456789</p>
+     <Fade duration={2500}> <h2 className="text-5xl font-extrabold mt-10 mb-20">BOOK YOUR TABLE</h2></Fade>
+      <form className=" md:w-6/12 px-2 mx-auto my-5">
         <div className="mx-auto grid grid-cols-2 gap-6">
-          <Slide>
+          <Slide direction="left">
             {" "}
             <div className="form-control w-full md:max-w-xs mx-auto">
               <input
@@ -28,7 +27,7 @@ const Reservation = () => {
             />
           </div>
           </Slide>
-          <Slide duration={2000} >
+          <Slide direction="left" duration={2000} >
             {" "}
             <div className="form-control w-full md:max-w-xs mx-auto">
               <input
@@ -48,7 +47,7 @@ const Reservation = () => {
               />
             </div>
           </Slide>
-          <Slide duration={2500} >
+          <Slide direction="left" duration={2500} >
             {" "}
             <div className="form-control w-full md:max-w-xs mx-auto">
               <input

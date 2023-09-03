@@ -1,4 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
+import logo from "../../assets/Group-1/Logo/Place Your Logo Here (Double Click to Edit).png"
 
 const Dashboard = () => {
  
@@ -20,6 +21,7 @@ const Dashboard = () => {
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu  p-4 w-52 min-h-full bg-orange-400 text-black text-center">
             {/* Sidebar content here */}
+          <img className="mb-10" src={logo} alt="" />
             <Link to="/dashboard/myCart">
               {" "}
               <li>My Cart</li>
