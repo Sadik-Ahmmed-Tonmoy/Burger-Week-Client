@@ -5,13 +5,20 @@ import { Slide } from "react-awesome-reveal";
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
+import { Parallax, Background } from 'react-parallax';
 
 const Banner = () => {
   return (
+    <Parallax
+    blur={{ min: -24, max: 15 }}
+    bgImage={bgImg}
+    bgImageAlt="the dog"
+    strength={-800}
+>
     <div
       id="home"
       className="my-auto pt-32 md:pt-0"
-      style={{ backgroundImage: `url('${bgImg}')` }}
+      // style={{ backgroundImage: `url('${bgImg}')` }}
     >
       <div className="md:flex md:justify-evenly">
         <div className="p-4 md:ms-10 flex flex-col justify-center">
@@ -36,6 +43,7 @@ const Banner = () => {
         </div>
       </div>
     </div>
+    </Parallax>
   );
 };
 
