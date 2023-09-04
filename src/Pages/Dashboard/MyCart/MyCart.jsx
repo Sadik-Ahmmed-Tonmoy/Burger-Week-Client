@@ -7,7 +7,8 @@ import { AuthContext } from "../../../providers/AuthProvider/AuthProvider";
 const MyCart = () => {
   const [cart] = useCart();
   const { user } = useContext(AuthContext)
-  const total = cart.reduce((sum, item) => sum + item.price, 0);
+  const parseTotal = cart.reduce((sum, item) => sum + parseFloat(item.price), 0);
+  const total = parseTotal.toFixed(2)
   const paymentDetails = { total, name:user?.displayName, email: user?.email }
   const handlePayment = () => {
     axios.post("https://burger-week-server.vercel.app/order", paymentDetails).then((result) => {
@@ -25,15 +26,15 @@ const MyCart = () => {
           Total Price: <span className="text-orange-500"> ${total}</span>
         </h3>
       </div>
-      {cart.map((item) => (
-        <CartItemList key={item._id} item={item} />
-      ))}
       <button
         onClick={() => handlePayment()}
-        className="btn text-center btn-primary"
+        className="btn text-center btn-primary my-6"
       >
         Pay Now
       </button>
+      {cart.map((item) => (
+        <CartItemList key={item._id} item={item} />
+      ))}
     </>
   );
 };

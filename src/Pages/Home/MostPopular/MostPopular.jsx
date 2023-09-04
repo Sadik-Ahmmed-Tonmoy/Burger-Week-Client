@@ -35,11 +35,11 @@ const MostPopular = () => {
         </div>
       </div>
       <div
-       data-aos="fade-up-left"
+    
         className="bg-cover bg-fixed w-full h-full bg-no-repeat rounded-xl bg-center md:bg-left"
         style={{ backgroundImage: `url('${burgerImage2}')` }}
       >
-        <div className="p-4 md:p-8">
+        <div data-aos="fade-up-left" className="p-4 md:p-8">
           <p className="text-xl md:text-2xl text-white">TRY IT TODAY</p>
           <h3 className="text-3xl md:text-4xl text-white">
             MOST POPULAR <br /> BURGER

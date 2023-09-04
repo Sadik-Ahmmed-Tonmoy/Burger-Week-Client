@@ -11,7 +11,7 @@ const Login = () => {
   const location = useLocation();
 
   const from = location?.state?.from?.pathname || "/";
-  console.log(from);
+
 
   const {
     register,
@@ -46,7 +46,7 @@ const Login = () => {
   return (
     <>
    
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen bg-white mt-10">
       <div className="hero-content flex-col md:flex-row">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Login now!</h1>
@@ -56,7 +56,7 @@ const Login = () => {
             a id nisi.
           </p>
         </div>
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-slate-900 text-white">
           <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control">
               <label className="label">
@@ -91,7 +91,7 @@ const Login = () => {
               <input className="btn btn-primary" type="submit" value="Login" />
             </div>
           </form>
-          <p className="m-4">New Here? <Link to="/signUp">Create an account</Link></p>
+          <p className="m-4">New Here? <Link to="/signUp"><span className="text-blue-500">Create an account</span></Link></p>
         <SocialLogin/>
         </div>
       </div>

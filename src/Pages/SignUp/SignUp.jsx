@@ -78,7 +78,7 @@ const SignUp = () => {
 
   return (
     <>
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-screen bg-white mt-12">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Sign Up now!</h1>
@@ -88,7 +88,7 @@ const SignUp = () => {
               et a id nisi.
             </p>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-slate-900 text-white">
             <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
               <div className="form-control">
                 <label className="label">
@@ -187,7 +187,7 @@ const SignUp = () => {
               </div>
             </form>
             <p className="m-4">
-              Already have an account? <Link to="/login">Please login</Link>
+              Already have an account? <Link to="/login"><span className="text-blue-500">Please login</span></Link>
             </p>
             <SocialLogin/>
           </div>

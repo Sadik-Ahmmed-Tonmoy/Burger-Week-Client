@@ -9,10 +9,14 @@ import useCart from "../../hooks/useCart/useCart";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [cart] = useCart();
-  const total = cart.reduce((sum, item) => item.price + sum, 0);
+  const total = cart.reduce((sum, item) => parseFloat(item.price) + sum, 0);
+  const roundedTotal = total.toFixed(2);
 
   const location = useLocation();
   const isPayment = location.pathname.includes("payment");
+  const isLogin = location.pathname.includes("login");
+  const isSignUp = location.pathname.includes("signUp");
+  const isOtherNav = isPayment || isLogin || isSignUp;
 
   return (
     <>
@@ -43,7 +47,7 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-52"
             >
-              {isPayment ? (
+              {isOtherNav ? (
                 <li>
                   <Link to="/">Home</Link>
                 </li>
@@ -62,12 +66,14 @@ const Navbar = () => {
               )}
             </ul>
           </div>
-          <Link to='/'><img className="ms-3 md:h-12 h-6" src={Logo} alt="" /></Link>
+          <Link to="/">
+            <img className="ms-3 md:h-12 h-6" src={Logo} alt="" />
+          </Link>
         </div>
         {/* pc */}
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            {isPayment ? (
+            {isOtherNav ? (
               <li>
                 <Link to="/">Home</Link>
               </li>
@@ -92,7 +98,7 @@ const Navbar = () => {
             Express Delivery <span>+880123456789</span>
           </p>
 
-          <div className="flex mx-5 ">
+          <div className="flex md:mx-5 ">
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle">
                 <div className="indicator">
@@ -123,7 +129,7 @@ const Navbar = () => {
                   <span className="font-bold text-lg">
                     Quantity: {cart?.length}
                   </span>
-                  <span className="text-info">Subtotal: ${total}</span>
+                  <span className="text-info">Subtotal: ${roundedTotal}</span>
                   <div className="card-actions">
                     <Link to="/dashboard/myCart">
                       {" "}

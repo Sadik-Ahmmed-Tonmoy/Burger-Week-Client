@@ -13,7 +13,7 @@ import { Outlet } from "react-router-dom";
 
 const Main = () => {
   return (
-    <div className="bg-white text-amber-950 font-serif">
+    <div className="bg-white text-amber-950 font-serif overflow-x-hidden">
      
         <Navbar />
         <Outlet />
